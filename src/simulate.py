@@ -51,13 +51,6 @@ class SimulationRunner:
         self.config = config
         self.patient_gen = self.patient_iterator()
 
-        os.environ["OPENAI_API_KEY"] = (
-            API_KEY
-        )
-        os.environ["OPENAI_BASE_URL"] = (
-            BASE_URL
-        )
-
     def patient_iterator(self):
         ds = self.config.ds
         hadm_ids = (

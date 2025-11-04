@@ -7,9 +7,6 @@ load_dotenv()
 # logging level
 LOG_LEVEL = logging.ERROR
 
-API_KEY = "sk-Ap4hWsVALst6LlXf1Hr_gw" #"sk-1234"
-BASE_URL = "http://pluto/v1" #"http://0.0.0.0:16191"
-
 # -------------Simulate--------------
 # qdrant setup
 QDRANT_ICD_PROCEDURE_COLLECTION_NAME: str = "mimic_iv_icd_codes_procedures"
