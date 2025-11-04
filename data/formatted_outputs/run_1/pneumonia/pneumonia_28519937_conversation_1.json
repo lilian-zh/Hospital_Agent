@@ -1,0 +1,14 @@
+[
+    {
+        "type": "message",
+        "role": "Patient",
+        "content": "Hi, I'm not feeling well but not sure how to describe it. Could you help me figure out what's wrong?",
+        "timestamp": "2025-11-04T08:02:42.080088"
+    },
+    {
+        "type": "message",
+        "role": "Doctor",
+        "content": "Sure, I’m sorry you’re feeling unwell. Let’s start by talking a little about what you’ve been experiencing.\n\n**Can you tell me, in your own words, what symptoms you’ve had (such as pain, shortness of breath, fever, nausea, weakness, etc.), when they started, and anything that seems to make them better or worse?**",
+        "timestamp": "2025-11-04T08:02:46.070845"
+    }
+]
