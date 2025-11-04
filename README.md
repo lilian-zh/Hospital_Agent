@@ -12,4 +12,4 @@ Step 4. add .env for OPENAI_BASE_URL and OPENAI_API_KEY under Hospital_Agent
 Step 5. 
    ```sh
    bash src/run_simulations.sh 
-      ```
+   ```

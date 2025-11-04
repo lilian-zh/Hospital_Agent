@@ -187,7 +187,7 @@ class MIMIC_Dataset(BaseModel):
         if name is None:
             name = self.diagnosis
         path = Path(
-            f"/mnt/bulk-sirius/lizhang/LiWS/Medical_Llama_Agents/data/dataset_test/{name}"
+            f"/your/path/to/dataset/{name}"
         )
         if path.exists():
             user_input = input(
@@ -224,7 +224,7 @@ class MIMIC_Dataset(BaseModel):
     def load_dataset(cls, diagnosis_name: str) -> MIMIC_Dataset:
         """Load the dataset from a metadata.json and parquet (pd.DataFrame) files"""
         path = Path(
-            f"/mnt/bulk-sirius/lizhang/LiWS/Medical_Llama_Agents/data/diagnosis_datasets/{diagnosis_name}"
+            f"/your/path/to/diagnosis_datasets/{diagnosis_name}"
         )
 
         with open(path / "metadata.json", "r") as f:
@@ -245,13 +245,13 @@ class MIMIC_Dataset(BaseModel):
 
     @classmethod
     def load_from_pkl(cls, diagnosis_name: str) -> "MIMIC_Dataset":
-        with open(f"/mnt/bulk-vega/lizhang/LiWS/medical_bench/datasets/physionet.org/files/mimic-iv-ext-cdm/1.1/{diagnosis_name}_hadm_info_first_diag.pkl", "rb") as f:
+        with open(f"/your/path/to/datasets/physionet.org/files/mimic-iv-ext-cdm/1.1/{diagnosis_name}_hadm_info_first_diag.pkl", "rb") as f:
             data_dict = pickle.load(f)
 
         hadm_ids = set(data_dict.keys())
 
         # 加载 lab_test_mapping.csv
-        mapping_df = pd.read_csv('/mnt/bulk-vega/lizhang/LiWS/medical_bench/datasets/physionet.org/files/mimic-iv-ext-cdm/1.1/lab_test_mapping.csv')
+        mapping_df = pd.read_csv('/your/path/to/physionet.org/files/mimic-iv-ext-cdm/1.1/lab_test_mapping.csv')
 
         # 创建 itemid 到 label 和 fluid 的映射字典
         itemid_to_label = mapping_df.set_index('itemid')['label'].to_dict()
